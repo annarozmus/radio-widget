@@ -1,0 +1,152 @@
+@mixin stationElement($paddingTop, $paddingBottom) {
+  padding-top: $paddingTop;
+  padding-bottom: $paddingBottom;
+  border-bottom: 1px solid #43434d;
+}
+
+$headerColor: #eeae61;
+$MainFontColor: #a3acbe;
+$widgetBackgroundColor: #282833;
+$footerBackgroundColor: #22222b;
+$footerBorderTopColor: #4d505c;
+
+html {
+  font-family: 'Open Sans', sans-serif;
+}
+
+div.widget {
+  height: 500px;
+  width: 320px;
+  border-radius: 50px;
+  background-color: $widgetBackgroundColor;
+}
+
+div.header {
+  height: 80px;
+  background-color: $headerColor;
+  border-radius: 50px 50px 0 0;
+  .arrow {
+    width: 20%;
+    float: left;
+    img {
+      margin-top: 30px;
+      margin-left: 19px;
+      width: 14px;
+      height: 24px;
+    }
+    :hover {
+      cursor: pointer;
+    }
+  }
+  .headline {
+    width: 60%;
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    padding-top: 32px;
+    margin-left: 119px;
+  }
+  .switch {
+    float: right;
+    margin-top: -27px;
+    margin-right: 20px;
+    img {
+      width: 22px;
+      height: 26px;
+    }
+    :hover {
+      cursor: pointer;
+    }
+  }
+}
+
+div.main {
+  background-color: $widgetBackgroundColor;
+}
+
+ul {
+  list-style: none;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 0;
+  li:last-child a {
+    border-bottom: none;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $MainFontColor;
+  font-size: 16px;
+  overflow: hidden;
+  display: inline-block;
+  width: 100%;
+  @include stationElement(30px, 20px);
+  &:hover {
+    background-color: lighten($widgetBackgroundColor, 2%)
+  }
+}
+
+span.station-frequency {
+  float: right;
+  font-weight: 700;
+}
+
+div.footer {
+  height: 80px;
+  background-color: $footerBackgroundColor;
+  border-radius: 0 0 50px 50px;
+  border-top: 1px solid $footerBorderTopColor;
+  text-align: center;
+}
+
+div.info {
+  visibility: hidden;
+  margin-top: 21px;
+  .currently {
+    color: $headerColor;
+    font-size: 8px;
+    font-weight: 700;
+  }
+  .current-station {
+    color: $MainFontColor;
+    font-size: 16px;
+  }
+}
+
+div.image {
+  float: left;
+  margin-left: 36px;
+  margin-top: 20px;
+  img {
+    height: 145px;
+    width: 145px;
+  }
+}
+
+div.minus {
+  float: left;
+  margin-top: 50px;
+  img {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+div.plus {
+  float: right;
+  margin-top: 50px;
+  img {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+li.controls {
+  a {
+    border-bottom: none;
+  }
+  :hover {
+    background-color: inherit;
+  }
+}
